@@ -8,13 +8,13 @@
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+<link href="{{asset('css/bootstrap.css')}}" rel="stylesheet" type="text/css" media="all">
 <!-- Custom Theme files -->
-<link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
+<link href="{{asset('css/style.css')}}" rel="stylesheet" type="text/css" media="all"/>
 <!--js-->
-<script src="js/jquery-2.1.1.min.js"></script> 
+<script src="{{asset('js/jquery-2.1.1.min.js')}}"></script>
 <!--icons-css-->
-<link href="css/font-awesome.css" rel="stylesheet"> 
+<link href="{{asset('css/font-awesome.css')}}" rel="stylesheet">
 
 </head>
 <body>	
@@ -64,10 +64,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--COPY rights end here-->
 
 <!--scrolling js-->
-		<script src="js/jquery.nicescroll.js"></script>
-		<script src="js/scripts.js"></script>
+		<script src="{{asset('/../../../js/jquery.nicescroll.js')}}"></script>
+		<script src="{{asset('/../../../js/scripts.js')}}"></script>
 		<!--//scrolling js-->
-<script src="js/bootstrap.js"> </script>
+<script src="{{asset('/../../../js/bootstrap.js')}}"> </script>
 <!-- mother grid end here-->
 </body>
 </html>
