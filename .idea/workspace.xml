@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4b2b3c30-767b-4a16-b85d-327acc7fea58" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/local/resources/views/login.blade.php" afterPath="$PROJECT_DIR$/local/resources/views/login.blade.php" />
-      <change beforePath="$PROJECT_DIR$/local/routes/web.php" afterPath="$PROJECT_DIR$/local/routes/web.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,8 +19,8 @@
       <file leaf-file-name="login.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/local/resources/views/login.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="686">
-              <caret line="48" column="73" lean-forward="false" selection-start-line="48" selection-start-column="73" selection-end-line="48" selection-end-column="73" />
+            <state relative-caret-position="812">
+              <caret line="55" column="18" lean-forward="false" selection-start-line="55" selection-start-column="18" selection-end-line="55" selection-end-column="18" />
               <folding>
                 <marker date="1521540959885" expanded="true" signature="697:723" ph="..." />
                 <marker date="1521540959885" expanded="true" signature="815:837" ph="..." />
@@ -225,12 +223,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1521537703456</updated>
-      <workItem from="1521537720215" duration="2971000" />
+      <workItem from="1521537720215" duration="3320000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2971000" />
+    <option name="totallyTimeSpent" value="3320000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1098" extended-state="6" />
@@ -277,8 +275,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/local/resources/views/login.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="686">
-          <caret line="48" column="73" lean-forward="false" selection-start-line="48" selection-start-column="73" selection-end-line="48" selection-end-column="73" />
+        <state relative-caret-position="812">
+          <caret line="55" column="18" lean-forward="false" selection-start-line="55" selection-start-column="18" selection-end-line="55" selection-end-column="18" />
           <folding>
             <marker date="1521540959885" expanded="true" signature="697:723" ph="..." />
             <marker date="1521540959885" expanded="true" signature="815:837" ph="..." />
