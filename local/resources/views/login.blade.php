@@ -24,9 +24,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<h1>Login</h1>
 			</div>
 			<div class="login-block">
-				<form>
-					<input type="text" name="email" placeholder="Email" required="">
+				<form action="{{url('login')}}" method="POST">
+                    @if($errors->has('errorlogin'))
+                        <div class="alert alert-danger">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                            {{$errors->first('errorlogin')}}
+                        </div>
+                    @endif
+					<input type="text" name="email" placeholder="Email" value="{{old('email')}}" >
+					@if($errors->has('email'))
+						<p  style="color:red; padding-bottom: 10px">{{$errors->first('email')}}</p>
+					@endif
 					<input type="password" name="password" class="lock" placeholder="Password">
+					@if($errors->has('password'))
+						<p style="color:red ">{{$errors->first('password')}}</p>
+					@endif
 					<div class="forgot-top-grids">
 						<div class="forgot-grid">
 							<ul>
@@ -41,8 +53,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 						<div class="clearfix"> </div>
 					</div>
-					<input type="submit" name="Sign In" value="Login">	
-					<h3>Not a member?<a href="signup.html"> Sign up now</a></h3>				
+					{!! csrf_field() !!}
+
+					<button type="submit" class="btn btn-primary">Đăng nhập</button>
+					<h3>Not a member?<a href="signup.html"> Sign up now</a></h3>
 					<h2>or login with</h2>
 					<div class="login-icons">
 						<ul>
@@ -64,10 +78,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--COPY rights end here-->
 
 <!--scrolling js-->
-		<script src="{{asset('/../../../js/jquery.nicescroll.js')}}"></script>
-		<script src="{{asset('/../../../js/scripts.js')}}"></script>
+		<script src="{{asset('js/jquery.nicescroll.js')}}"></script>
+		<script src="{{asset('js/scripts.js')}}"></script>
 		<!--//scrolling js-->
-<script src="{{asset('/../../../js/bootstrap.js')}}"> </script>
+<script src="{{asset('js/bootstrap.js')}}"> </script>
 <!-- mother grid end here-->
 </body>
 </html>
