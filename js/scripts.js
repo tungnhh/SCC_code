@@ -48,10 +48,24 @@ $(document).ready(function(){
         });
     });
 });
+/*
+	By Osvaldas Valutis, www.osvaldas.info
+	Available for use under the MIT License
+*/
 
+//Limit File Update
 
+$(function(){
+    $("input[type = 'submit']").click(function(){
+        var $fileUpload = $("input[type='file']");
+        if (parseInt($fileUpload.get(0).files.length) > 30){
+            alert("You are only allowed to upload a maximum of 30 files");
+        }
+    });
+});
+//Upload Form
 
-
+}
 
                      
      

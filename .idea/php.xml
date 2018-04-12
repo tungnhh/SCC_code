@@ -64,6 +64,7 @@
       <path value="$PROJECT_DIR$/local/vendor/sebastian/recursion-context" />
       <path value="$PROJECT_DIR$/local/vendor/symfony/event-dispatcher" />
       <path value="$PROJECT_DIR$/local/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/local/vendor/chumper/zipper" />
     </include_path>
   </component>
   <component name="PhpUnit">

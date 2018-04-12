@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en" class="no-js">
 <head>
 <title>Source Code checker</title>
 
@@ -8,15 +8,16 @@
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
-<!-- Custom Theme files --> 
+<!-- Custom Theme files -->
 <link href="css/style.css" rel="stylesheet" type="text/css"/>
-<link href="css/animate.css" rel="stylesheet" type="text/css" media="all"/>
+<link href="css/animate.css" rel="stylesheet" type="text/css"/>
 <!--js-->
-<script src="js/jquery-2.1.1.min.js"></script>
+<script src="js/jquery-2.1.1.min.js"></script> 
 <!--icons-css-->
 <link href="css/fontawesome-free-5.0.10/web-fonts-with-css/css/fontawesome-all.min.css" rel="stylesheet">
 <link href="css/font-awesome.css" rel="stylesheet">
-<!--Google Fonts-->
+<script>(function(e,t,n){var r=e.querySelectorAll("html")[0];r.className=r.className.replace(/(^|\s)no-js(\s|$)/,"$1js$2")})(document,window,0);</script>
+
 
 
 </head>
@@ -88,70 +89,9 @@
 
 
 <!-- Main Here -->
-    <div id="upFile" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-
-            <!-- Modal content-->
-            <div class="modal-content">
+@yield('main')
 
 
-                <!-- Nav tabs -->
-                <ul class="nav nav-tabs tabs-2 light-blue darken-3" role="tablist">
-                        <li class="nav-item">
-                            <a class="nav-link active" data-toggle="tab" href="#panel7" role="tab"><i class="fas fa-tv"></i> From Computer</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-toggle="tab" href="#panel8" role="tab"><i class="fab fa-google-drive"></i> Google Drive</a>
-                        </li>
-                </ul>
-                <!--Computer-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">File upload form</h4>
-                    </div>
-                    <div class="modal-body">
-                        <!-- Form -->
-                        <form action="upload"    method="post"  enctype="multipart/form-data">
-                            Select file : <input type="file" name="file[]" id="file" class="form-control" accept=".zip" multiple ><br>
-                            <input type="button" class="btn btn-info" value="Upload" id="upload">
-                        </form>
-
-                        <!-- Preview-->
-                        <div id="message"></div>
-
-                        <script>
-                            var form = document.getElementById('upload');
-                            var request = new XMLHttpRequest();
-
-                            form.addEventListener('submit', function(e){
-                                e.preventDefault();
-                                var formdata = new FormData(form);
-
-                                request.open('post', '/upload');
-                                request.addEventListener("load", transferComplete);
-                                request.send(formdata);
-
-                            });
-
-                            function transferComplete(data){
-                                response = JSON.parse(data.currentTarget.response);
-                                if(response.success){
-                                    document.getElementById('message').innerHTML = "Successfully Uploaded Files!";
-                                }
-                            }
-                        </script>
-                    </div>
-
-                </div>
-                <!--Computer-->
-                </div>
-
-             </div>
-    </div>
-
-
-    </div>
 </div> <!-- inner block -->
 <!--inner block end here-->
 <!--copy rights start here-->
@@ -181,7 +121,7 @@
 			
 	
 		        <li id="menu-home" ><a href="index.html"><i class="fa fa-tachometer"></i><span>Dashboard</span></a></li>
-		        <li><a href="#"><i class="fa fa-book"></i><span>Subject</span></a></li>
+		        <li><a href="#"><i class="fa fa-book"></i><span>Source Code Management</span></a></li>
 
 		        <li id="menu-comunicacao" ><a href="#"><i class="fa fa-balance-scale"></i><span>Compare</span></a></li>
 
@@ -193,20 +133,7 @@
 		      </ul>
 		    </div>
 	 </div>
-
-    <div class="clearfix"> </div>
-    <a  class="btn btn-info btn-lg" data-toggle="modal" data-target="#upFile">
-        <div class="add_fixed">
-            <div class="add-phone">
-                <div class="animated infinite pulse add-ph-circle-fill"></div>
-                <div class="animated infinite tada add-ph-img-circle"></div>
-            </div>
-
-        </div>
-    </a>
-
-
-
+	<div class="clearfix"> </div>
 </div>
 <!--slide bar menu end here-->
 <script>
@@ -233,8 +160,7 @@ $(".sidebar-icon").click(function() {
 		<script src="js/scripts.js"></script>
 		<!--//scrolling js-->
 <script src="js/bootstrap.js"> </script>
+<script src="js/custom-file-input.js"></script>
 <!-- mother grid end here-->
-
-<script>
 </body>
 </html>                     

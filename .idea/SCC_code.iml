@@ -3,6 +3,7 @@
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/local/app" isTestSource="false" packagePrefix="App\" />
+      <excludeFolder url="file://$MODULE_DIR$/local/vendor/chumper/zipper" />
       <excludeFolder url="file://$MODULE_DIR$/local/vendor/classpreloader/classpreloader" />
       <excludeFolder url="file://$MODULE_DIR$/local/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/local/vendor/dnoegel/php-xdg-base-dir" />
