@@ -4697,19 +4697,9 @@ table, th, tr, td {
     position: fixed;
     visibility: visible;
     z-index: 9999;
-	top: 680px;
+	bottom: 100px;
 }
-.add-ph-circle {
-    background-color: transparent;
-	border: 2px solid #00aff2;
-	border-radius: 100%;
-	height: 100px;
-	left: 13px;
-	opacity: 0.5;
-	position: absolute;
-	top: -4px;
-	width: 100px;
-}
+
 .add-ph-circle-fill {
     background-color: rgba(0, 175, 242, 0.5);
 	border: 2px solid transparent;
@@ -4723,7 +4713,7 @@ table, th, tr, td {
 	width: 50px;
 }
 .add-ph-img-circle {
-    background: #00aff2 url('../images/add.png') no-repeat scroll center center;
+    background: #00aff2 url('../img/add.png') no-repeat scroll center center;
 	border: 2px solid transparent;
 	border-radius: 100%;
 	height: 35px;
