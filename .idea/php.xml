@@ -65,6 +65,7 @@
       <path value="$PROJECT_DIR$/local/vendor/symfony/event-dispatcher" />
       <path value="$PROJECT_DIR$/local/vendor/sebastian/exporter" />
       <path value="$PROJECT_DIR$/local/vendor/chumper/zipper" />
+      <path value="$PROJECT_DIR$/local/vendor/zanysoft/laravel-zip" />
     </include_path>
   </component>
   <component name="PhpUnit">
