@@ -163,6 +163,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Chumper\Zipper\ZipperServiceProvider::class,
+        App\Providers\GoogleDriveServiceProvider::class,
 
         /*
          * Package Service Providers...

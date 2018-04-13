@@ -9,23 +9,34 @@
       <excludeFolder url="file://$MODULE_DIR$/local/vendor/dnoegel/php-xdg-base-dir" />
       <excludeFolder url="file://$MODULE_DIR$/local/vendor/doctrine/inflector" />
       <excludeFolder url="file://$MODULE_DIR$/local/vendor/doctrine/instantiator" />
+      <excludeFolder url="file://$MODULE_DIR$/local/vendor/firebase/php-jwt" />
       <excludeFolder url="file://$MODULE_DIR$/local/vendor/fzaninotto/faker" />
+      <excludeFolder url="file://$MODULE_DIR$/local/vendor/google/apiclient" />
+      <excludeFolder url="file://$MODULE_DIR$/local/vendor/google/apiclient-services" />
+      <excludeFolder url="file://$MODULE_DIR$/local/vendor/google/auth" />
+      <excludeFolder url="file://$MODULE_DIR$/local/vendor/guzzlehttp/guzzle" />
+      <excludeFolder url="file://$MODULE_DIR$/local/vendor/guzzlehttp/promises" />
+      <excludeFolder url="file://$MODULE_DIR$/local/vendor/guzzlehttp/psr7" />
       <excludeFolder url="file://$MODULE_DIR$/local/vendor/hamcrest/hamcrest-php" />
       <excludeFolder url="file://$MODULE_DIR$/local/vendor/jakub-onderka/php-console-color" />
       <excludeFolder url="file://$MODULE_DIR$/local/vendor/jakub-onderka/php-console-highlighter" />
       <excludeFolder url="file://$MODULE_DIR$/local/vendor/jeremeamia/SuperClosure" />
       <excludeFolder url="file://$MODULE_DIR$/local/vendor/laravel/framework" />
       <excludeFolder url="file://$MODULE_DIR$/local/vendor/league/flysystem" />
+      <excludeFolder url="file://$MODULE_DIR$/local/vendor/league/flysystem-cached-adapter" />
       <excludeFolder url="file://$MODULE_DIR$/local/vendor/mockery/mockery" />
       <excludeFolder url="file://$MODULE_DIR$/local/vendor/monolog/monolog" />
       <excludeFolder url="file://$MODULE_DIR$/local/vendor/mtdowling/cron-expression" />
       <excludeFolder url="file://$MODULE_DIR$/local/vendor/myclabs/deep-copy" />
+      <excludeFolder url="file://$MODULE_DIR$/local/vendor/nao-pon/flysystem-cached-extra" />
+      <excludeFolder url="file://$MODULE_DIR$/local/vendor/nao-pon/flysystem-google-drive" />
       <excludeFolder url="file://$MODULE_DIR$/local/vendor/nesbot/carbon" />
       <excludeFolder url="file://$MODULE_DIR$/local/vendor/nikic/php-parser" />
       <excludeFolder url="file://$MODULE_DIR$/local/vendor/paragonie/random_compat" />
       <excludeFolder url="file://$MODULE_DIR$/local/vendor/phpdocumentor/reflection-common" />
       <excludeFolder url="file://$MODULE_DIR$/local/vendor/phpdocumentor/reflection-docblock" />
       <excludeFolder url="file://$MODULE_DIR$/local/vendor/phpdocumentor/type-resolver" />
+      <excludeFolder url="file://$MODULE_DIR$/local/vendor/phpseclib/phpseclib" />
       <excludeFolder url="file://$MODULE_DIR$/local/vendor/phpspec/prophecy" />
       <excludeFolder url="file://$MODULE_DIR$/local/vendor/phpunit/php-code-coverage" />
       <excludeFolder url="file://$MODULE_DIR$/local/vendor/phpunit/php-file-iterator" />
@@ -34,6 +45,8 @@
       <excludeFolder url="file://$MODULE_DIR$/local/vendor/phpunit/php-token-stream" />
       <excludeFolder url="file://$MODULE_DIR$/local/vendor/phpunit/phpunit" />
       <excludeFolder url="file://$MODULE_DIR$/local/vendor/phpunit/phpunit-mock-objects" />
+      <excludeFolder url="file://$MODULE_DIR$/local/vendor/psr/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/local/vendor/psr/http-message" />
       <excludeFolder url="file://$MODULE_DIR$/local/vendor/psr/log" />
       <excludeFolder url="file://$MODULE_DIR$/local/vendor/psy/psysh" />
       <excludeFolder url="file://$MODULE_DIR$/local/vendor/ramsey/uuid" />
@@ -66,7 +79,6 @@
       <excludeFolder url="file://$MODULE_DIR$/local/vendor/symfony/yaml" />
       <excludeFolder url="file://$MODULE_DIR$/local/vendor/vlucas/phpdotenv" />
       <excludeFolder url="file://$MODULE_DIR$/local/vendor/webmozart/assert" />
-      <excludeFolder url="file://$MODULE_DIR$/local/vendor/zanysoft/laravel-zip" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -65,7 +65,19 @@
       <path value="$PROJECT_DIR$/local/vendor/symfony/event-dispatcher" />
       <path value="$PROJECT_DIR$/local/vendor/sebastian/exporter" />
       <path value="$PROJECT_DIR$/local/vendor/chumper/zipper" />
-      <path value="$PROJECT_DIR$/local/vendor/zanysoft/laravel-zip" />
+      <path value="$PROJECT_DIR$/local/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/local/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/local/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/local/vendor/phpseclib/phpseclib" />
+      <path value="$PROJECT_DIR$/local/vendor/firebase/php-jwt" />
+      <path value="$PROJECT_DIR$/local/vendor/nao-pon/flysystem-google-drive" />
+      <path value="$PROJECT_DIR$/local/vendor/nao-pon/flysystem-cached-extra" />
+      <path value="$PROJECT_DIR$/local/vendor/google/apiclient" />
+      <path value="$PROJECT_DIR$/local/vendor/google/auth" />
+      <path value="$PROJECT_DIR$/local/vendor/google/apiclient-services" />
+      <path value="$PROJECT_DIR$/local/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/local/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/local/vendor/league/flysystem-cached-adapter" />
     </include_path>
   </component>
   <component name="PhpUnit">

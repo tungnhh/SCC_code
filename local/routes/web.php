@@ -23,3 +23,5 @@ Route::get('exercise',function(){
 Route::get('login','LoginController@getLogin');
 Route::post('login','LoginController@postLogin');
 Route::post('upload', 'UploadController@uploadFromComputer');
+
+
