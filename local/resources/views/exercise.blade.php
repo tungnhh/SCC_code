@@ -48,9 +48,9 @@
                         </div>
                         <div class="modal-body">
                             <!-- Form -->
-                            <form action="googleDriver"  method="post"  enctype="multipart/form-data">
+                            <form action="googleDrive"  method="post"  enctype="multipart/form-data">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Search">
+                                    <input type="text"  name="drive_File"class="form-control" placeholder="Google Drive Link">
                                     <div class="input-group-btn">
                                         <button class="btn btn-primary load-driver" type="submit">
                                             <i class="fas fa-cloud-download-alt"></i>
