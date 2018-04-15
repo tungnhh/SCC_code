@@ -13,13 +13,21 @@
         $(".scrollbar1").getNiceScroll().hide();
     }
 
-    // test
-    $("#form-uploads").hide();
+    // add - edit - delete:hover
     $( ".add-phone" ).hover(function() {
         $(".add-phone > div").removeClass("animated");
-        $("#form-uploads").show(3000);
     }, function(){
         $(".add-phone > div").addClass("animated");
+    });
+    $( ".edit-phone" ).hover(function() {
+        $(".edit-phone > div").removeClass("animated");
+    }, function(){
+        $(".edit-phone > div").addClass("animated");
+    });
+    $( ".delete-phone" ).hover(function() {
+        $(".delete-phone > div").removeClass("animated");
+    }, function(){
+        $(".delete-phone > div").addClass("animated");
     });
 
 })(jQuery)
@@ -63,7 +71,23 @@ $(function(){
         }
     });
 });
-//Upload Form
+//Delete_Modal
+$(document).ready(function(){
+    $("#mytable #checkall").click(function () {
+        if ($("#mytable #checkall").is(':checked')) {
+            $("#mytable input[type=checkbox]").each(function () {
+                $(this).prop("checked", true);
+            });
+
+        } else {
+            $("#mytable input[type=checkbox]").each(function () {
+                $(this).prop("checked", false);
+            });
+        }
+    });
+
+    $("[data-toggle=tooltip]").tooltip();
+});
 
 
 

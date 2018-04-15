@@ -20,6 +20,12 @@ Route::get('login',function(){
 Route::get('exercise',function(){
    return view('exercise');
 });
+Route::get('subject',function(){
+    return view('subject');
+});
+Route::get('class',function(){
+    return view('class');
+});
 Route::get('login','LoginController@getLogin');
 Route::post('login','LoginController@postLogin');
 Route::post('upload', 'UploadController@uploadFromComputer');
