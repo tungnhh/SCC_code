@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4b2b3c30-767b-4a16-b85d-327acc7fea58" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
-      <change beforePath="$PROJECT_DIR$/js/scripts.js" afterPath="$PROJECT_DIR$/js/scripts.js" />
-      <change beforePath="$PROJECT_DIR$/local/resources/views/exercise.blade.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/local/resources/views/subject.blade.php" afterPath="$PROJECT_DIR$/local/resources/views/subject.blade.php" />
-      <change beforePath="$PROJECT_DIR$/local/resources/views/user.blade.php" afterPath="$PROJECT_DIR$/local/resources/views/user.blade.php" />
-      <change beforePath="$PROJECT_DIR$/local/routes/web.php" afterPath="$PROJECT_DIR$/local/routes/web.php" />
-    </list>
+    <list default="true" id="4b2b3c30-767b-4a16-b85d-327acc7fea58" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -82,12 +74,12 @@
         <entry file="file://$PROJECT_DIR$/local/resources/views/file.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="651">
-              <caret line="31" column="25" lean-forward="false" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
+              <caret line="31" column="30" lean-forward="true" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
               <folding>
-                <marker date="1524145229976" expanded="true" signature="11:17" ph="..." />
-                <marker date="1524145229976" expanded="true" signature="29:35" ph="..." />
-                <marker date="1524145229976" expanded="true" signature="3106:3120" ph="..." />
-                <marker date="1524145229976" expanded="true" signature="4631:4645" ph="..." />
+                <marker date="1524146497425" expanded="true" signature="11:17" ph="..." />
+                <marker date="1524146497425" expanded="true" signature="29:35" ph="..." />
+                <marker date="1524146497425" expanded="true" signature="3106:3120" ph="..." />
+                <marker date="1524146497425" expanded="true" signature="4631:4645" ph="..." />
               </folding>
             </state>
           </provider>
@@ -162,7 +154,6 @@
       <find>underline</find>
       <find>a:hover</find>
       <find>text-de</find>
-      <find>sidebar-collapsed-back</find>
       <find>sidebar-collapsed-back</find>
       <find>fixed</find>
       <find>.fixed</find>
@@ -289,7 +280,7 @@
       <path value="$PROJECT_DIR$/local/vendor/league/flysystem-cached-adapter" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="78" />
     <option name="y" value="22" />
     <option name="width" value="1400" />
@@ -456,10 +447,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="97326000" />
+    <option name="totallyTimeSpent" value="97341000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1060" extended-state="7" />
+    <frame x="-9" y="-9" width="1938" height="1060" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.301826" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -834,12 +825,12 @@
     <entry file="file://$PROJECT_DIR$/local/resources/views/file.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="651">
-          <caret line="31" column="25" lean-forward="false" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
+          <caret line="31" column="30" lean-forward="true" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
           <folding>
-            <marker date="1524145229976" expanded="true" signature="11:17" ph="..." />
-            <marker date="1524145229976" expanded="true" signature="29:35" ph="..." />
-            <marker date="1524145229976" expanded="true" signature="3106:3120" ph="..." />
-            <marker date="1524145229976" expanded="true" signature="4631:4645" ph="..." />
+            <marker date="1524146497425" expanded="true" signature="11:17" ph="..." />
+            <marker date="1524146497425" expanded="true" signature="29:35" ph="..." />
+            <marker date="1524146497425" expanded="true" signature="3106:3120" ph="..." />
+            <marker date="1524146497425" expanded="true" signature="4631:4645" ph="..." />
           </folding>
         </state>
       </provider>
