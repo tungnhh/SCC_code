@@ -4926,7 +4926,7 @@ ul.dropdown-menu {
 }
 /*subject*/
 .tab-content .search{
-    float: right;
+    float: right !important;
 }
 .btn-search{
     background-color:#337ab7 ;

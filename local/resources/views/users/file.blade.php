@@ -1,4 +1,4 @@
-@extends  ('user')
+@extends  ('users.layout.user')
 @section ('main')
     <!--Content-->
     <table id="example" class="table table-striped table-bordered" style="width:100%">

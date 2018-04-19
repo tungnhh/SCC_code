@@ -18,13 +18,13 @@ Route::get('login',function(){
     return view('login');
 });
 Route::get('file',function(){
-   return view('file');
+   return view('users.file');
 });
 Route::get('subject',function(){
-    return view('subject');
+    return view('users.subject');
 });
 Route::get('class',function(){
-    return view('class');
+    return view('users.class');
 });
 Route::get('login','LoginController@getLogin');
 Route::post('login','LoginController@postLogin');

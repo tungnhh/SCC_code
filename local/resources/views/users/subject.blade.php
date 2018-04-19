@@ -1,4 +1,4 @@
-@extends  ('user')
+@extends  ('users.layout.user')
 @section ('main')
     <div class="tab-content">
         <div class = "row">
