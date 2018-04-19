@@ -26,6 +26,9 @@ Route::get('subject',function(){
 Route::get('class',function(){
     return view('users.class');
 });
+Route::get('exercise',function(){
+    return view('users.exercise');
+});
 Route::get('login','LoginController@getLogin');
 Route::post('login','LoginController@postLogin');
 Route::post('upload', 'UploadController@uploadFromComputer');

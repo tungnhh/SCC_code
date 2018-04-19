@@ -4,14 +4,15 @@
 <title>Source Code checker</title>
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--Data Table -->
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
 <!-- Custom Theme files -->
 <link href="css/style.css" rel="stylesheet" type="text/css"/>
 <link href="css/animate.css" rel="stylesheet" type="text/css"/>
-<!--Data Table -->
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css"/>
-<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 <!--js-->
 <script src="js/jquery-2.1.1.min.js"></script> 
 <!--icons-css-->
