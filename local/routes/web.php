@@ -17,8 +17,8 @@ Route::get('/', function () {
 Route::get('login',function(){
     return view('login');
 });
-Route::get('exercise',function(){
-   return view('exercise');
+Route::get('file',function(){
+   return view('file');
 });
 Route::get('subject',function(){
     return view('subject');

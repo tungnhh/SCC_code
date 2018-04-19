@@ -4,22 +4,20 @@
 <title>Source Code checker</title>
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
-
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
 <!-- Custom Theme files -->
 <link href="css/style.css" rel="stylesheet" type="text/css"/>
 <link href="css/animate.css" rel="stylesheet" type="text/css"/>
+<!--Data Table -->
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 <!--js-->
 <script src="js/jquery-2.1.1.min.js"></script> 
 <!--icons-css-->
 <link href="css/fontawesome-free-5.0.10/web-fonts-with-css/css/fontawesome-all.min.css" rel="stylesheet">
 <link href="css/font-awesome.css" rel="stylesheet">
 <script>(function(e,t,n){var r=e.querySelectorAll("html")[0];r.className=r.className.replace(/(^|\s)no-js(\s|$)/,"$1js$2")})(document,window,0);</script>
-
-
-
 </head>
 <body>	
 <div class="page-container">	
@@ -29,43 +27,43 @@
 				<div class="header-main">
 					<div class="header-left">
 							<div class="logo-name">
-									 <a href="index.html"> <h1>SCChecker</h1> 
-									<!--<img id="logo" src="" alt="Logo"/>--> 
-								  </a> 								
+									 <a href="index.html"> <h1>SCChecker</h1>
+									<!--<img id="logo" src="" alt="Logo"/>-->
+								  </a>
 							</div>
 							<!--search-box-->
 							<!--//end-search-box-->
 							<div class="clearfix"> </div>
 						 </div>
 						 <div class="header-right">
-							
+
 							<!--notification menu end -->
-							<div class="profile_details">		
+							<div class="profile_details">
 								<ul>
 									<li class="dropdown profile_details_drop">
 										<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-											<div class="profile_img">	
-												<span class="prfil-img"><img src="images/p1.png" alt=""> </span> 
+											<div class="profile_img">
+												<span class="prfil-img"><img src="images/p1.png" alt=""> </span>
 												<div class="user-name">
 													<p>Malorum</p>
 													<span>User</span>
 												</div>
 												<i class="fa fa-angle-down lnr"></i>
 												<i class="fa fa-angle-up lnr"></i>
-												<div class="clearfix"></div>	
-											</div>	
+												<div class="clearfix"></div>
+											</div>
 										</a>
 										<ul class="dropdown-menu drp-mnu">
-											
-											<li> <a href="#"><i class="fa fa-user"></i> Profile</a> </li> 
+
+											<li> <a href="#"><i class="fa fa-user"></i> Profile</a> </li>
 											<li> <a href="#"><i class="fa fa-sign-out"></i> Logout</a> </li>
 										</ul>
 									</li>
 								</ul>
 							</div>
-							<div class="clearfix"> </div>				
+							<div class="clearfix"> </div>
 						</div>
-				     <div class="clearfix"> </div>	
+				     <div class="clearfix"> </div>
 				</div>
 <!--heder end here-->
 <!-- script-for sticky-nav -->
@@ -74,7 +72,7 @@
 			 var navoffeset=$(".header-main").offset().top;
 			 $(window).scroll(function(){
 				var scrollpos=$(window).scrollTop(); 
-				if(scrollpos >=navoffeset){
+				if(scrollpos >navoffeset){
 					$(".header-main").addClass("fixed");
 				}else{
 					$(".header-main").removeClass("fixed");
@@ -161,6 +159,9 @@ $(".sidebar-icon").click(function() {
 		<!--//scrolling js-->
 <script src="js/bootstrap.js"> </script>
 <script src="js/custom-file-input.js"></script>
+
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
 <!-- mother grid end here-->
 </body>
 </html>                     

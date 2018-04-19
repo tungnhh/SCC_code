@@ -77,29 +77,28 @@
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h4 class="modal-title"><span class="fas fa-trash-alt"></span> Delete Subject</h4>
                 </div>
-                <div class="modal-body">
-                    <div class="container">
-                        <div class="row">
-                            <h4>Select Subject....</h4>
-                            <div class="table-responsive" style="width:70%;display: flex;justify-content: center;">
-                                <table id="mytable" class="table table-bordred table-striped">
-                                    <thead>
-                                    <th><input type="checkbox" id="checkall" /></th>
-                                    <th>Subject Name</th>
-                                    <th>Delete</th>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td><input type="checkbox" class="checkthis" /></td>
-                                        <td>Irshad</td>
-                                        <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
-                                    </tr>
+                <div class="modal-body" style="padding:15px 30px;">
+                    <h4>Select Subject....</h4>
+                    <div class="table-responsive" ">
+                        <table id="mytable" class="table table-bordred table-striped">
+                            <thead>
+                            <th><input type="checkbox" id="checkall" /></th>
+                            <th>Subject Name</th>
+                            <th><span class="fa fa-cog"></span></th>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td><input type="checkbox" class="checkthis" /></td>
+                                <td>Irshad</td>
+                                <td><span data-placement="top" data-toggle="tooltip" title="Delete">
+                                    <button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" >
+                                        <span class="glyphicon glyphicon-trash"></span></button></span>
+                                </td>
+                            </tr>
 
-                                    </tbody>
+                            </tbody>
 
-                                </table>
-                            </div>
-                        </div>
+                        </table>
                     </div>
                 </div>
                 <div class="modal-footer">
