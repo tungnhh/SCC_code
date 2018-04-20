@@ -7,7 +7,7 @@
 <!--Data Table -->
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css"/>
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
-
+<link rel="shortcut icon" href="img/sccIcon.png">
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
 <!-- Custom Theme files -->
@@ -21,7 +21,7 @@
 <script>(function(e,t,n){var r=e.querySelectorAll("html")[0];r.className=r.className.replace(/(^|\s)no-js(\s|$)/,"$1js$2")})(document,window,0);</script>
 </head>
 <body>	
-<div class="page-container">	
+<div class="page-container sidebar-collapsed">	
    <div class="left-content">
 	   <div class="mother-grid-inner">
             <!--header start here-->
@@ -120,9 +120,9 @@
 			
 	
 		        <li id="menu-home" ><a href="index.html"><i class="fa fa-tachometer"></i><span>Dashboard</span></a></li>
-		        <li><a href="#"><i class="fa fa-book"></i><span>Source Code Management</span></a></li>
+		        <li><a style="font-size:12px;" href="{{ url('subject') }}"><i class="fa fa-book"></i><span>Source Code Management</span></a></li>
 
-		        <li id="menu-comunicacao" ><a href="#"><i class="fa fa-balance-scale"></i><span>Compare</span></a></li>
+		        <li id="menu-comunicacao" ><a href="{{ url('compare') }}"><i class="fa fa-balance-scale"></i><span>Compare</span></a></li>
 
 		        
 		        <li id="menu-academico" ><a href="#"><i class="fa fa-clipboard"></i></i><span>Report</span></a></li>
@@ -136,7 +136,7 @@
 </div>
 <!--slide bar menu end here-->
 <script>
-var toggle = true;
+var toggle = false;
             
 $(".sidebar-icon").click(function() {                
   if (toggle)

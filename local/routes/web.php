@@ -29,6 +29,11 @@ Route::get('class',function(){
 Route::get('exercise',function(){
     return view('users.exercises');
 });
+
+Route::get('compare', function(){
+	return view('users.compare');
+});
+
 Route::get('login','LoginController@getLogin');
 Route::post('login','LoginController@postLogin');
 Route::post('upload', 'UploadController@uploadFromComputer');
