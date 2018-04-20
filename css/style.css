@@ -4944,6 +4944,7 @@ ul.dropdown-menu {
 }
 .infor-detail {
     border: 1px solid #c0c0c0;
+    margin-top: 1em;
 }
 .infor-detail h4 {
     padding: 10px 15px;
