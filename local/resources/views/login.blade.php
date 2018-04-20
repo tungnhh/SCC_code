@@ -55,8 +55,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 					{!! csrf_field() !!}
 
-					<button type="submit" class="btn btn-primary">Login</button>
+					<button type="submit" class="btn btn-primary">Đăng nhập</button>
 					<h3>Not a member?<a href="signup.html"> Sign up now</a></h3>
+					<h2>or login with</h2>
+					<div class="login-icons">
+						<ul>
+							<li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
+							<li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
+							<li><a href="#" class="google"><i class="fa fa-google-plus"></i></a></li>						
+						</ul>
+					</div>
 				</form>
 				<h5><a href="index.html">Go Back to Home</a></h5>
 			</div>

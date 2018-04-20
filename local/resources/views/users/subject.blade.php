@@ -13,14 +13,56 @@
         </div>
         <div class="infor-sub">
             <div class="row">
-                @foreach($subject as $sub)
-                    <div class="col-md-3 col-sm-3 col-xs-12">
-                        <div class="infor-detail">
-                            <h4><a href="#">{{$sub->name}}</a></h4>
-                            <span>Total class: 15 Classes</span>
-                        </div>
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                    <div class="infor-detail">
+                        <h4><a href="#">PRF192</a></h4>
+                        <span>Total class: 15 Classes</span>
                     </div>
-                @endforeach
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                    <div class="infor-detail">
+                        <h4><a href="#">PRF192</a></h4>
+                        <span>Total class: 15 Classes</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                    <div class="infor-detail">
+                        <h4><a href="#">PRF192</a></h4>
+                        <span>Total class: 15 Classes</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                    <div class="infor-detail">
+                        <h4><a href="#">PRF192</a></h4>
+                        <span>Total class: 15 Classes</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                    <div class="infor-detail">
+                        <h4><a href="#">PRF192</a></h4>
+                        <span>Total class: 15 Classes</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                    <div class="infor-detail">
+                        <h4><a href="#">PRF192</a></h4>
+                        <span>Total class: 15 Classes</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                    <div class="infor-detail">
+                        <h4><a href="#">PRF192</a></h4>
+                        <span>Total class: 15 Classes</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                    <div class="infor-detail">
+                        <h4><a href="#">PRF192</a></h4>
+                        <span>Total class: 15 Classes</span>
+                    </div>
+                </div>
             </div>
         </div>
 

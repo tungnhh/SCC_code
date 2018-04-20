@@ -18,16 +18,16 @@ Route::get('login',function(){
     return view('login');
 });
 Route::get('file',function(){
-   return view('users.files');
+   return view('users.file');
 });
 Route::get('subject',function(){
-    return view('users.subjects');
+    return view('users.subject');
 });
 Route::get('class',function(){
-    return view('users.classes');
+    return view('users.class');
 });
 Route::get('exercise',function(){
-    return view('users.exercises');
+    return view('users.exercise');
 });
 
 Route::get('compare', function(){
