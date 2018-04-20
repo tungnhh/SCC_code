@@ -7,4 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Classes extends Model
 {
     //
+    protected $table = "class";
+    public function subject(){
+        return $this ->hasMany('App\Subject','subjectID','id');
+    }
+    public  function exercise(){
+        return $this->hasMany('App\Exercise','classID','id');
+    }
 }
