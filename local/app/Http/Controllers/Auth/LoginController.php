@@ -1,45 +1,39 @@
 <?php
 
+namespace App\Http\Controllers\Auth;
 
-namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
-
-use App\Http\Requests;
-use Validator;
-use Auth;
-use Illuminate\Support\MessageBag;
+use App\Http\Controllers\Controller;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller
 {
-    public function getLogin(){
-        return view('login');
-    }
-    public function postLogin(Request $request) {
-        $rules = [
-            'email' =>'required|email',
-            'password' => 'required|min:8'
-        ];
-        $messages = [
-            'email.required' => 'Email must required',
-            'email.email' => 'Invalite Email',
-            'password.required' => 'Password must required',
-            'password.min' => 'Passwords must contain at least 8 characters',
-        ];
-        $validator = Validator::make($request->all(), $rules, $messages);
+    /*
+    |--------------------------------------------------------------------------
+    | Login Controller
+    |--------------------------------------------------------------------------
+    |
+    | This controller handles authenticating users for the application and
+    | redirecting them to your home screen. The controller uses a trait
+    | to conveniently provide its functionality to your applications.
+    |
+    */
 
-        if ($validator->fails()) {
-            return redirect()->back()->withErrors($validator)->withInput();
-        } else {
-            $email = $request->email;
-            $password = bcrypt($request->password);
+    use AuthenticatesUsers;
 
-            if( Auth::attempt(['email' => $email, 'password' =>$password])) {
-                return redirect()->intended('/');
-            } else {
-                $errors = new MessageBag(['errorlogin' => 'Email or Password is incorrect']);
-                return redirect()->back()->withInput()->withErrors($errors);
-            }
-        }
+    /**
+     * Where to redirect users after login.
+     *
+     * @var string
+     */
+    protected $redirectTo = '/home';
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('guest')->except('logout');
     }
 }
