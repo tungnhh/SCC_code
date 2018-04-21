@@ -34,10 +34,10 @@ Route::get('exercise',function(){
 Route::get('compare', function(){
 	return view('users.compare');
 });
-Route::get('register','RegisterController@getRegister');
-Route::post('register','RegisterController@postRegister');
-Route::get('login','LoginController@getLogin');
-Route::post('login','LoginController@postLogin');
+Route::get('register','HomeController@getRegister');
+Route::post('register','HomeController@postRegister');
+Route::get('login','HomeController@getLogin');
+Route::post('login','HomeController@postLogin');
 
 Route::post('upload', 'UploadController@uploadFromComputer');
 Route::post('googleDrive', 'googleDriverController@uploadFromDrive');

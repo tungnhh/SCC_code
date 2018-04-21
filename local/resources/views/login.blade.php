@@ -24,20 +24,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<h1>Login</h1>
 			</div>
 			<div class="login-block">
-				<form action="{{url('login')}}" method="POST">
-                    @if($errors->has('errorlogin'))
-                        <div class="alert alert-danger">
-                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                            {{$errors->first('errorlogin')}}
-                        </div>
-                    @endif
+				@if(session('message'))
+					<div class="alert alert-danger">
+						<strong>{{ session('message') }}</strong>
+					</div>
+				@endif
+				<form action="login" method="POST">
+
 					<input type="text" name="email" placeholder="Email" value="{{old('email')}}" >
-					@if($errors->has('email'))
-						<p  style="color:red; padding-bottom: 10px">{{$errors->first('email')}}</p>
+					@if($errors->first('email'))
+						<div class="alert alert-danger error-sec">
+							<strong>{{ $errors->first('email') }}</strong>
+						</div>
 					@endif
 					<input type="password" name="password" class="lock" placeholder="Password">
-					@if($errors->has('password'))
-						<p style="color:red ">{{$errors->first('password')}}</p>
+					@if($errors->first('password'))
+						<div class="alert alert-danger error-sec">
+							<strong>{{ $errors->first('password') }}</strong><br/>
+						</div>
 					@endif
 					<div class="forgot-top-grids">
 						<div class="forgot-grid">
