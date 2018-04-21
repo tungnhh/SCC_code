@@ -5172,7 +5172,11 @@ ul.dropdown-menu {
 
 .slect-Information{
  
-  padding-left: 25%;
+  padding-left: 28%;
+}
+
+.select-Information select{
+  margin-left: 20px;
 }
 
 
