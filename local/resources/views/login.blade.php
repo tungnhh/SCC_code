@@ -43,7 +43,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="forgot-grid">
 							<ul>
 								<li>
-									<input type="checkbox" id="brand1" value="">
+									<input type="checkbox" id="brand1" value="remember">
 									<label for="brand1"><span></span>Remember me</label>
 								</li>
 							</ul>
@@ -56,7 +56,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					{!! csrf_field() !!}
 
 					<button type="submit" class="btn btn-primary">Đăng nhập</button>
-					<h3>Not a member?<a href="signup.html"> Sign up now</a></h3>
+					<h3>Not a member?<a href="{{url('/register')}}"> Sign up now</a></h3>
 					<h2>or login with</h2>
 					<div class="login-icons">
 						<ul>
