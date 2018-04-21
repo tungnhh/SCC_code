@@ -1,33 +1,24 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\User;
-use Validator;
-use App\Http\Controllers\Controller;
+use App\Http\Requests;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Foundation\Auth\RegistersUsers;
-
 class RegisterController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Register Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles the registration of new users as well as their
-    | validation and creation. By default this controller uses a trait to
-    | provide this functionality without requiring any additional code.
-    |
-    */
-
-    use RegistersUsers;
+    //
+    use AuthenticatesUsers;
 
     /**
-     * Where to redirect users after login / registration.
+     * Where to redirect users after login.
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -36,36 +27,42 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest');
+        $this->middleware('guest', ['except' => 'logout']);
     }
 
-    /**
-     * Get a validator for an incoming registration request.
-     *
-     * @param  array  $data
-     * @return \Illuminate\Contracts\Validation\Validator
-     */
-    protected function validator(array $data)
-    {
-        return Validator::make($data, [
-            'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
-            'password' => 'required|min:6|confirmed',
-        ]);
+
+    function getRegister(){
+        return view('register');
     }
 
-    /**
-     * Create a new user instance after a valid registration.
-     *
-     * @param  array  $data
-     * @return User
-     */
-    protected function create(array $data)
-    {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
+    protected function postRegister(Request $request){
+        $this->validate($request,[
+            'name' =>'required',
+            'email'=>'required|email|unique:users,email',
+            'password' => 'required|min:8|regex:/^[a-zA-Z0-9!$#%]+$/',
+            'passwordAgain' => 'required|same:password'
+            ],[
+            'name.required' => 'Please enter your name!',
+            'email.required' => 'Please enter your email!',
+            'email.email' => 'Please enter valid email!',
+            'email.unique' => 'The email address you have entered is already registered',
+            'password.required'=>'Please enter your password!',
+            'password.min' =>'The password has at least 8 character',
+            'passwordAgain.required'=>'Please enter your confirm password!',
+            'passwordAgain.same' => "Confirm password doesn't match. Please enter again"
+
         ]);
+        $user =new User;
+        $user ->name = $request ->name;
+        $user ->email = $request ->email;
+        $user ->pass = bcrypt($request ->password);
+        $user ->phoneNumber = $request ->phone;
+        $user ->workplace = $request ->place;
+        $user ->dateOfBirth = $request ->dob;
+        $user ->role=0;
+        $user ->save();
+
+        return redirect('subject')->with('thongbao',"Register successfully");
+
     }
 }

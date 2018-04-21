@@ -15,7 +15,7 @@
             <div class="row">
                 <div class="col-md-3 col-sm-3 col-xs-12">
                     <div class="infor-detail">
-                        <h4><a href="#">PRF192</a></h4>
+                        <h4><a href="#">{{bcrypt(12345678)}}</a></h4>
                         <span>Total class: 15 Classes</span>
                     </div>
                 </div>

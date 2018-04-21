@@ -47,7 +47,7 @@
 												<span class="prfil-img"><img src="images/p1.png" alt=""> </span>
 												<div class="user-name">
 													<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-														{{ $user->name }} <span class="caret"></span>
+														<span class="caret"></span>
 													</a>
 												</div>
 												<i class="fa fa-angle-down lnr"></i>

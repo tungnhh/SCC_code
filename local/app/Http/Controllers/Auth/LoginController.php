@@ -1,39 +1,45 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\AuthenticatesUsers;
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+use App\Http\Requests;
+use Validator;
+use Auth;
+use Illuminate\Support\MessageBag;
 
 class LoginController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Login Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles authenticating users for the application and
-    | redirecting them to your home screen. The controller uses a trait
-    | to conveniently provide its functionality to your applications.
-    |
-    */
+    public function getLogin(){
+        return view('login');
+    }
+    public function postLogin(Request $request) {
+        $rules = [
+            'email' =>'required|email',
+            'password' => 'required|min:8'
+        ];
+        $messages = [
+            'email.required' => 'Email must required',
+            'email.email' => 'Invalite Email',
+            'password.required' => 'Password must required',
+            'password.min' => 'Passwords must contain at least 8 characters',
+        ];
+        $validator = Validator::make($request->all(), $rules, $messages);
 
-    use AuthenticatesUsers;
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        } else {
+            $email = $request->email;
+            $password = bcrypt($request->password);
 
-    /**
-     * Where to redirect users after login / registration.
-     *
-     * @var string
-     */
-    protected $redirectTo = '/home';
-
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('guest', ['except' => 'logout']);
+            if( Auth::attempt(['email' => $email, 'password' =>$password])) {
+                return redirect()->intended('/');
+            } else {
+                $errors = new MessageBag(['errorlogin' => 'Email or Password is incorrect']);
+                return redirect()->back()->withInput()->withErrors($errors);
+            }
+        }
     }
 }

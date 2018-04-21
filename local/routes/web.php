@@ -34,8 +34,8 @@ Route::get('exercise',function(){
 Route::get('compare', function(){
 	return view('users.compare');
 });
-Route::get('register','AccountController@getRegister');
-Route::post('register','AccountController@postRegister');
+Route::get('register','RegisterController@getRegister');
+Route::post('register','RegisterController@postRegister');
 Route::get('login','LoginController@getLogin');
 Route::post('login','LoginController@postLogin');
 
