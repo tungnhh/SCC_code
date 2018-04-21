@@ -1,27 +1,38 @@
 @extends  ('users.layout.user')
 @section ('main')
 
-<div class="row">
+<div class="row"  style="margin-left:20%;"> 
 	
-<div class="slect-Information">
-	<select name="" id="subject">
-		<option value="">Select Subject</option>
-	</select>
+	
+	<div class="col-md-3 col-sm-2 col-xs-12">
+		<select name="" id="subject" class="form-control">
+		<option value="-1">Select Subject</option>
+		<option value="0">PRO192</option>
+		</select>
+	</div>
 
-	<select name="" id="class">
+	<div class="col-md-3 col-sm-2 col-xs-12">
+	<select name="" id="class" class="form-control">
 		<option value="">Select Class</option>
 	</select>
+	</div>
 
-	<select name="" id="exercise">
+	<div class="col-md-3 col-sm-2 col-xs-12">
+	<select name="" id="exercise" class="form-control">
 		<option value="">Select Exercise</option>
 	</select>
+	</div>
 
-	<input type="submit" class="btn btn-success" value="Get List Students">
-</div>
 	
 
 
 </div>
+
+<div class="row">
+	<input type="submit" class="btn btn-success" value="Get List Students" style="margin-left: 45%;margin-top:  30px;">
+</div>
+
+
 
 	<div class="row">
 		<div class="selectAll">
@@ -104,6 +115,25 @@
             this.checked = false;                        
        						 });	
     		}
+			});
+
+			$(document).ready(function(){
+				$('#subject').change(function(){
+					var idSubject = $(this).val();
+					$.get("ajax/class/"+idSubject, function(data){
+						$("#class").html(data);
+					});
+					$("#exercise").html("<option value=\"-1\">Select Exercise</option>");
+				});
+
+				$('#class').change(function(){
+					var idClass = $(this).val();
+					$.get("ajax/exercise/"+idClass, function(data){
+						$("#exercise").html(data);
+					});
+				});
+
+
 			});
 
 

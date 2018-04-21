@@ -34,6 +34,7 @@ Route::get('exercise',function(){
 Route::get('compare', function(){
 	return view('users.compare');
 });
+
 Route::get('register','RegisterController@getRegister');
 Route::post('register','RegisterController@postRegister');
 Route::get('login','LoginController@getLogin');
@@ -41,4 +42,10 @@ Route::post('login','LoginController@postLogin');
 
 Route::post('upload', 'UploadController@uploadFromComputer');
 Route::post('googleDrive', 'googleDriverController@uploadFromDrive');
+
+
+Route::group(['prefix'=>'ajax'], function(){
+	Route::get('class/{idsubject}', 'CompareController@getClass');
+	Route::get('exercise/{idClass}', 'CompareController@getExercise');
+});
 
