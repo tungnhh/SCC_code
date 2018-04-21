@@ -17,9 +17,7 @@ Route::get('/', function () {
 Route::get('login',function(){
     return view('login');
 });
-Route::get('register',function(){
-    return view('register');
-});
+
 Route::get('file',function(){
    return view('users.file');
 });
@@ -36,7 +34,8 @@ Route::get('exercise',function(){
 Route::get('compare', function(){
 	return view('users.compare');
 });
-
+Route::get('register','AccountController@getRegister');
+Route::post('register','AccountController@postRegister');
 Route::get('login','LoginController@getLogin');
 Route::post('login','LoginController@postLogin');
 

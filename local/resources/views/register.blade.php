@@ -40,38 +40,63 @@
                     <h2>Join as a SCC Member</h2>
                     <div class="panel panel-default">
                         <div class="panel-body">
-                            <form role="form" action="#">
-                                <div class="form-group">
-                                    <label class="control-label">Name:</label>
-                                    <input type="text" class="form-control" placeholder="Enter your name">
+                            <form role="form" action="register" method="post">
+                                <input type="hidden" name="_token" value="{{csrf_token()}}"/>
+                                <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                                    <label class="control-label">Name (<span style="color: red">*</span>):</label>
+                                    <input type="text" class="form-control" placeholder="Enter your name" name="name" value="{{ old('name') }}">
+                                    @if ($errors->has('name'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('name') }}</strong>
+                                        </span>
+                                    @endif
                                 </div>
-                                <div class="form-group">
-                                    <label class="control-label">Email Address:</label>
-                                    <input type="email" class="form-control" placeholder="Enter your email address">
+                                <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                                    <label class="control-label">Email Address(<span style="color: red">*</span>):</label>
+                                    <input type="email" class="form-control" placeholder="Enter your email address" name="email" value="{{ old('email') }}">
+                                    @if ($errors->has('email'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('email') }}</strong>
+                                        </span>
+                                    @endif
                                 </div>
-                                <div class="form-group">
-                                    <label class="control-label">Password:</label>
-                                    <input type="password" class="form-control" placeholder="Enter your password">
+                                <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                                    <label class="control-label">Password(<span style="color: red">*</span>):</label>
+                                    <input type="password" class="form-control" placeholder="Enter your password" name="password" >
+                                    @if ($errors->has('password'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('password') }}</strong>
+                                        </span>
+                                    @endif
                                 </div>
-                                <div class="form-group">
-                                    <label class="control-label">Confirm Password:</label>
-                                    <input type="password" class="form-control" placeholder="Enter your password">
+                                <div class="form-group{{ $errors->has('passwordAgain') ? ' has-error' : '' }}">
+                                    <label class="control-label">Confirm Password(<span style="color: red">*</span>):</label>
+                                    <input type="password" class="form-control" placeholder="Enter your password" name="passwordAgain">
+                                    @if ($errors->has('passwordAgain'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('passwordAgain') }}</strong>
+                                        </span>
+                                    @endif
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">Phone Number:</label>
-                                    <input type="tel" class="form-control" placeholder="Enter your phone number">
+                                    <input type="tel" class="form-control" placeholder="Enter your phone number" name="phone">
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">Workplace:</label>
-                                    <input type="email" class="form-control" placeholder="Enter your workplace">
+                                    <input type="text" class="form-control" placeholder="Enter your workplace" name="place">
                                 </div>
                                 <div class="form-group">
                                     <label for="dob">Date Of Birth </label>
-                                    <input type="date" name="dob" id="dob" class="form-control">
+                                    <input type="date" name="dob" id="dob" class="form-control" >
                                     <span id="error_dob" class="text-danger"></span>
                                 </div>
-                                <div class="text-right">
-                                    <button type="submit" class="btn btn-primary">Register</button>
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="submit"></label>
+                                    <div class="col-md-5 ">
+                                        <a href="{{url('/login')}}" id="cancel" name="cancel" class="btn btn-danger">Cancel</a>
+                                        <button id="submit" name="submit" class="btn btn-primary" value="1">Sign Up</button>
+                                    </div>
                                 </div>
                             </form>
                         </div>
