@@ -1,5 +1,10 @@
 @extends  ('users.layout.user')
 @section ('main')
+    @if(session('notification'))
+        <div class="alert alert-success">
+            {{session('notification')}}
+        </div>
+    @endif
     <div class="tab-content">
         <div class = "row">
             <form action="search_subject_name.php" method="post">
@@ -13,57 +18,15 @@
         </div>
         <div class="infor-sub">
             <div class="row">
-                <div class="col-md-3 col-sm-3 col-xs-12">
-                    <div class="infor-detail">
-                        <h4><a href="#">{{bcrypt(12345678)}}</a></h4>
-                        <span>Total class: 15 Classes</span>
+                @foreach($subject as $sub)
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                        <div class="infor-detail"style="margin-top: 20px;">
+                            <h4><a href="#">{{$sub->name}}</a></h4>
+                            <span>Total class: 15 Classes</span>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-3 col-sm-3 col-xs-12">
-                    <div class="infor-detail">
-                        <h4><a href="#">PRF192</a></h4>
-                        <span>Total class: 15 Classes</span>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-3 col-xs-12">
-                    <div class="infor-detail">
-                        <h4><a href="#">PRF192</a></h4>
-                        <span>Total class: 15 Classes</span>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-3 col-xs-12">
-                    <div class="infor-detail">
-                        <h4><a href="#">PRF192</a></h4>
-                        <span>Total class: 15 Classes</span>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-3 col-sm-3 col-xs-12">
-                    <div class="infor-detail">
-                        <h4><a href="#">PRF192</a></h4>
-                        <span>Total class: 15 Classes</span>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-3 col-xs-12">
-                    <div class="infor-detail">
-                        <h4><a href="#">PRF192</a></h4>
-                        <span>Total class: 15 Classes</span>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-3 col-xs-12">
-                    <div class="infor-detail">
-                        <h4><a href="#">PRF192</a></h4>
-                        <span>Total class: 15 Classes</span>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-3 col-xs-12">
-                    <div class="infor-detail">
-                        <h4><a href="#">PRF192</a></h4>
-                        <span>Total class: 15 Classes</span>
-                    </div>
-                </div>
-            </div>
+                @endforeach
+             </div>
         </div>
 
     </div>
@@ -118,29 +81,33 @@
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h4 class="modal-title"><span class="far fa-edit"></span> Edit Subject</h4>
                 </div>
+                <form action="editSubject" method="post">
                 <div class="modal-body">
                     <div class="row" style="margin:10px 0; ">
                         <div class="form-group plain-select" >
                             Select Subject:
-                            <select class="form-control" >
-                                <option>PRF192</option>
-                                <option>PRJ321</option>
-                                <option>PRJ311</option>
+                            <select class="form-control" id="editSubject">
+                               @foreach($subject as $sub)
+                                    <option value="{{$sub->id}}">{{$sub ->name}}</option>
+                               @endforeach
                             </select>
                         </div>
 
                     </div>
                     <div class="row">
                         <div class="col-lg-12 col-lg-12 col-sm-12 col-xs-12">
-                            <form action="editSubject" method="post">
+                            {!! csrf_field() !!}
+
                                 <input class="form-control" name="subject" placeholder="Example: PRF192" type="text" required autofocus />
-                            </form>
+
                         </div>
                     </div>
                 </div>
+
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-success" data-dismiss="modal">Save</button>
+                    <button type="submit" class="btn btn-success">Save</button>
                 </div>
+                </form>
             </div>
 
         </div>
@@ -158,15 +125,25 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-lg-12 col-lg-12 col-sm-12 col-xs-12">
-                            <form action="addNewSubject" method="post">
-                                <input class="form-control" name="subject" placeholder="Example: PRF192" type="text" required autofocus />
+
+                            <form action="users/subject/add" method="post">
+                                {!! csrf_field() !!}
+                                <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                                    <input  class="form-control" name="subject" placeholder="Example: PRF192" type="text"  autofocus />
+                                    @if ($errors->has('subject'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('name') }}</strong>
+                                        </span>
+                                    @endif
+                                    <div class="modal-footer">
+                                        <input type="submit" class="btn btn-success" value = "save" />
+                                    </div>
+                                </div>
                             </form>
                         </div>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-success" data-dismiss="modal">Save</button>
-                </div>
+
             </div>
 
         </div>
@@ -188,10 +165,13 @@
 
     </div>
     <!-- Add btn -->
-    <div class="add_fixed " data-toggle="modal" data-target="#add_btn">
-        <div class="add-phone">
+    <div class="add_fixed " data-toggle="modal" data-target="#add_btn" >
+        <div class="add-phone ">
             <div class="animated infinite pulse add-ph-circle-fill"></div>
             <div class="animated infinite tada add-ph-img-circle"></div>
         </div>
     </div>
+
+
+
 @stop

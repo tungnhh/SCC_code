@@ -21,9 +21,7 @@ Route::get('login',function(){
 Route::get('file',function(){
    return view('users.file');
 });
-Route::get('subject',function(){
-    return view('users.subject');
-});
+
 Route::get('class',function(){
     return view('users.class');
 });
@@ -48,5 +46,14 @@ Route::post('googleDrive', 'googleDriverController@uploadFromDrive');
 Route::group(['prefix'=>'ajax'], function(){
 	Route::get('class/{idsubject}', 'CompareController@getClass');
 	Route::get('exercise/{idClass}', 'CompareController@getExercise');
+});
+Route::group(['prefix'=> 'users'],function(){
+    Route::group(['prefix' => 'subject'],function (){
+        Route::get('list','SCManagementController@listAllSubject');
+        Route::post('add','SCManagementController@addSubject');
+        Route::get('delete','SCManagementController@deleteSubject');
+        Route::get('search','SCManagementController@searchSubject');
+        Route::post('edit/{id}','SCManagementController@renameSubject');
+    });
 });
 

@@ -4,6 +4,7 @@
 <title>Source Code checker</title>
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<base href="{{asset('')}}">
 <!--Data Table -->
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css"/>
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
@@ -28,7 +29,7 @@
 				<div class="header-main">
 					<div class="header-left">
 							<div class="logo-name">
-									 <a href="index.html"> <h1>SCChecker</h1>
+									 <a href="{{url('users.subject')}}"> <h1>SCChecker</h1>
 									<!--<img id="logo" src="" alt="Logo"/>-->
 								  </a>
 							</div>

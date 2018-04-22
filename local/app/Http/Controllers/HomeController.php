@@ -68,7 +68,7 @@ class HomeController extends Controller
         $user ->role=0;
         $user ->save();
 
-        return redirect('subject')->with('thongbao',"Register successfully");
+        return redirect('users/subject/list')->with('thongbao',"Register successfully");
 
     }
 
