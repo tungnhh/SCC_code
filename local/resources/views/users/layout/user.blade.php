@@ -1,6 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en" class="no-js">
 <head>
+
 <title>Source Code checker</title>
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -71,52 +72,54 @@
 										</ul>
 									</li>
 								</ul>
-							</div>
-							<div class="clearfix"> </div>
-						</div>
-				     <div class="clearfix"> </div>
+							</li>
+						</ul>
+					</div>
+					<div class="clearfix"> </div>
 				</div>
-<!--heder end here-->
-<!-- script-for sticky-nav -->
-		<script>
-		$(document).ready(function() {
-			 var navoffeset=$(".header-main").offset().top;
-			 $(window).scroll(function(){
-				var scrollpos=$(window).scrollTop(); 
-				if(scrollpos >navoffeset){
-					$(".header-main").addClass("fixed");
-				}else{
-					$(".header-main").removeClass("fixed");
-				}
-			 });
-			 
-		});
-		</script>
-		<!-- /script-for sticky-nav -->
-<!--inner block start here-->
-<div class="inner-block" style="min-height:900px">
+				<div class="clearfix"> </div>
+			</div>
+			<!--heder end here-->
+			<!-- script-for sticky-nav -->
+			<script>
+                $(document).ready(function() {
+                    var navoffeset=$(".header-main").offset().top;
+                    $(window).scroll(function(){
+                        var scrollpos=$(window).scrollTop();
+                        if(scrollpos >navoffeset){
+                            $(".header-main").addClass("fixed");
+                        }else{
+                            $(".header-main").removeClass("fixed");
+                        }
+                    });
+
+                });
+			</script>
+			<!-- /script-for sticky-nav -->
+			<!--inner block start here-->
+			<div class="inner-block" style="min-height:900px">
 
 
-<!-- Main Here -->
-@yield('main')
+				<!-- Main Here -->
+				@yield('main')
 
 
-</div> <!-- inner block -->
-<!--inner block end here-->
-<!--copy rights start here-->
-<div class="copyrights">
-	 <p>© 2018 Source Code Checker. All Rights Reserved 
-</div>	
-<!--COPY rights end here-->
-</div>
-</div>
-<!--slider menu-->
-    <div class="sidebar-menu">
-		  	<div class="logo"> <a href="#" class="sidebar-icon"> <span class="fa fa-bars"></span> </a> <a href="#"> <span id="logo" ></span> 
-			      <!--<img id="logo" src="" alt="Logo"/>--> 
-			  </a> </div>		  
-		    <div class="menu">
-		      <ul id="menu" >
+			</div> <!-- inner block -->
+			<!--inner block end here-->
+			<!--copy rights start here-->
+			<div class="copyrights">
+				<p>© 2018 Source Code Checker. All Rights Reserved
+			</div>
+			<!--COPY rights end here-->
+		</div>
+	</div>
+	<!--slider menu-->
+	<div class="sidebar-menu">
+		<div class="logo"> <a href="#" class="sidebar-icon"> <span class="fa fa-bars"></span> </a> <a href="#"> <span id="logo" ></span>
+				<!--<img id="logo" src="" alt="Logo"/>-->
+			</a> </div>
+		<div class="menu">
+			<ul id="menu" >
 				<li id="menu-image"><a href=""><span><img src="images/p1.png" alt=""></span></a></li>
 				<li><a href="">
 					
@@ -146,28 +149,28 @@
 </div>
 <!--slide bar menu end here-->
 <script>
-var toggle = false;
-            
-$(".sidebar-icon").click(function() {                
-  if (toggle)
-  {
-    $(".page-container").addClass("sidebar-collapsed").removeClass("sidebar-collapsed-back");
-    $("#menu span").css({"position":"absolute"});
-  }
-  else
-  {
-    $(".page-container").removeClass("sidebar-collapsed").addClass("sidebar-collapsed-back");
-    setTimeout(function() {
-      $("#menu span").css({"position":"relative"});
-    }, 400);
-  }               
-                toggle = !toggle;
-            });
+    var toggle = false;
+
+    $(".sidebar-icon").click(function() {
+        if (toggle)
+        {
+            $(".page-container").addClass("sidebar-collapsed").removeClass("sidebar-collapsed-back");
+            $("#menu span").css({"position":"absolute"});
+        }
+        else
+        {
+            $(".page-container").removeClass("sidebar-collapsed").addClass("sidebar-collapsed-back");
+            setTimeout(function() {
+                $("#menu span").css({"position":"relative"});
+            }, 400);
+        }
+        toggle = !toggle;
+    });
 </script>
 <!--scrolling js-->
-		<script src="js/jquery.nicescroll.js"></script>
-		<script src="js/scripts.js"></script>
-		<!--//scrolling js-->
+<script src="js/jquery.nicescroll.js"></script>
+<script src="js/scripts.js"></script>
+<!--//scrolling js-->
 <script src="js/bootstrap.js"> </script>
 <script src="js/custom-file-input.js"></script>
 

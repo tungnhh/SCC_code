@@ -22,9 +22,7 @@ Route::get('dashboard', function(){
 Route::get('file',function(){
    return view('users.file');
 });
-Route::get('subject',function(){
-    return view('users.subject');
-});
+
 Route::get('class',function(){
     return view('users.class');
 });
@@ -35,8 +33,6 @@ Route::get('exercise',function(){
 Route::get('compare', function(){
 	return view('users.compare');
 });
-
-
 
 
 // User login ---------------------------------------------------------------
@@ -62,12 +58,18 @@ Route::post('googleDrive', 'googleDriverController@uploadFromDrive');
 
 Route::post('getCompare', 'CompareController@compare');
 
-Route::group(['prefix'=>'users', 'middleware'=>'userlogin'],function(){
-	Route::get('report', function(){
-		return view('users.report');
-	});
-});
 
+Route::group(['prefix'=>'users','middleware'=>'userlogin'],function(){
+    Route::get('report', function(){
+        return view('users.report');
+    });
+    Route::group(['prefix' => 'subject'],function (){
+        Route::get('list','SCManagementController@listAllSubject');
+        Route::post('add','SCManagementController@addSubject');
+        Route::get('delete','SCManagementController@deleteSubject');
+        Route::get('search','SCManagementController@searchSubject');
+        Route::post('edit/{id}','SCManagementController@renameSubject');
+});
 
 
 
@@ -76,4 +78,5 @@ Route::group(['prefix'=>'ajax', 'middleware'=>'userlogin'], function(){
 	Route::get('exercise/{idClass}', 'CompareController@getExercise');
 	Route::get('student/{exerciseID}', 'CompareController@getStudent');
 });
+
 
