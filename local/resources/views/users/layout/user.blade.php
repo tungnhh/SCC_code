@@ -1,72 +1,76 @@
 <!DOCTYPE HTML>
 <html lang="en" class="no-js">
 <head>
-	<title>Source Code checker</title>
 
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<!--Data Table -->
-	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css"/>
-	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
-	<link rel="shortcut icon" href="img/sccIcon.png">
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-	<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
-	<!-- Custom Theme files -->
-	<link href="css/style.css" rel="stylesheet" type="text/css"/>
-	<link href="css/animate.css" rel="stylesheet" type="text/css"/>
-	<!--js-->
-	<script src="js/jquery-2.1.1.min.js"></script>
-	<!--icons-css-->
-	<link href="css/fontawesome-free-5.0.10/web-fonts-with-css/css/fontawesome-all.min.css" rel="stylesheet">
-	<link href="css/font-awesome.css" rel="stylesheet">
-	<script>(function(e,t,n){var r=e.querySelectorAll("html")[0];r.className=r.className.replace(/(^|\s)no-js(\s|$)/,"$1js$2")})(document,window,0);</script>
+<title>Source Code checker</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--Data Table -->
+<base href="{{ url('user') }}">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+<link rel="shortcut icon" href="img/sccIcon.png">
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+<!-- Custom Theme files -->
+<link href="css/style.css" rel="stylesheet" type="text/css"/>
+<link href="css/animate.css" rel="stylesheet" type="text/css"/>
+<!--js-->
+<script src="js/jquery-2.1.1.min.js"></script> 
+<!--icons-css-->
+<link href="css/fontawesome-free-5.0.10/web-fonts-with-css/css/fontawesome-all.min.css" rel="stylesheet">
+<link href="css/font-awesome.css" rel="stylesheet">
+<script>(function(e,t,n){var r=e.querySelectorAll("html")[0];r.className=r.className.replace(/(^|\s)no-js(\s|$)/,"$1js$2")})(document,window,0);</script>
 </head>
-<body>
-<div class="page-container sidebar-collapsed">
-	<div class="left-content">
-		<div class="mother-grid-inner">
-			<!--header start here-->
-			<div class="header-main">
-				<div class="header-left">
-					<div class="logo-name">
-						<a href="index.html"> <h1>SCChecker</h1>
-							<!--<img id="logo" src="" alt="Logo"/>-->
-						</a>
-					</div>
-					<!--search-box-->
-					<!--//end-search-box-->
-					<div class="clearfix"> </div>
-				</div>
-				<div class="header-right">
+<body>	
+<div class="page-container sidebar-collapsed">	
+   <div class="left-content">
+	   <div class="mother-grid-inner">
+            <!--header start here-->
+				<div class="header-main">
+					<div class="header-left">
+							<div class="logo-name">
+									 <a href="index.html"> <h1>SCChecker</h1>
+									<!--<img id="logo" src="" alt="Logo"/>-->
+								  </a>
+							</div>
+							<!--search-box-->
+							<!--//end-search-box-->
+							<div class="clearfix"> </div>
+						 </div>
+						 <div class="header-right">
 
-					<!--notification menu end -->
-					<div class="profile_details">
-						<ul>
-							<li class="dropdown profile_details_drop">
-								@if(Auth::user()!==null)
-									<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-										<div class="profile_img">
+							<!--notification menu end -->
+							<div class="profile_details">
+								<ul>
+									<li class="dropdown profile_details_drop">
+									@if(Auth::user()!==null)
+										<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+											<div class="profile_img">
 												<span class="prfil-img">
 													@if(Auth::user()->image == null)
-														<img style="border-radius: 50%;" width="42px" height="42px" src="img/p1.png" alt="">
+														<img style="border-radius: 50%;" width="42px" height="42px" src="img/p1.png" alt=""> 
 													@else
-														<img src="{{Auth::user()->image}}" alt="">
+														<img src="{{Auth::user()->image}}" alt=""> 		
 													@endif
 
 												</span>
-											<div class="user-name">
-												<p>{{Auth::user()->name}}</p>
-												<span>User</span>
+												<div class="user-name">
+													<p>{{Auth::user()->name}}</p>
+													<span>User</span>
+												</div>
+												<i class="fa fa-angle-down lnr"></i>
+												<i class="fa fa-angle-up lnr"></i>
+												<div class="clearfix"></div>
 											</div>
-											<i class="fa fa-angle-down lnr"></i>
-											<i class="fa fa-angle-up lnr"></i>
-											<div class="clearfix"></div>
-										</div>
-									</a>
-								@endif
-								<ul class="dropdown-menu drp-mnu">
+										</a>
+									@endif	
+										<ul class="dropdown-menu drp-mnu">
 
-									<li> <a href="#"><i class="fa fa-user"></i> Profile</a> </li>
-									<li> <a href="logout"><i class="fa fa-sign-out"></i> Logout</a> </li>
+											<li> <a href="#"><i class="fa fa-user"></i> Profile</a> </li>
+											<li> <a href="logout"><i class="fa fa-sign-out"></i> Logout</a> </li>
+										</ul>
+									</li>
 								</ul>
 							</li>
 						</ul>
@@ -118,29 +122,29 @@
 			<ul id="menu" >
 				<li id="menu-image"><a href=""><span><img src="images/p1.png" alt=""></span></a></li>
 				<li><a href="">
+					
+					<span style="color:orange">Malorum</span> <br>
+					<span style="color:gray">User</span>
+					<hr>
+					
+				</a></li>
 
-						<span style="color:orange">Malorum</span> <br>
-						<span style="color:gray">User</span>
-						<hr>
+			
+			
+	
+		        <li id="menu-home" ><a href="{{url('dashboard')}}"><i class="fa fa-tachometer"></i><span>Dashboard</span></a></li>
+		        <li><a style="font-size:12px;" href="{{ url('subject') }}"><i class="fa fa-book"></i><span>Source Code Management</span></a></li>
 
-					</a></li>
+		        <li id="menu-comunicacao" ><a href="{{ url('compare') }}"><i class="fa fa-balance-scale"></i><span>Compare</span></a></li>
 
-
-
-
-				<li id="menu-home" ><a href="{{url('dashboard')}}"><i class="fa fa-tachometer"></i><span>Dashboard</span></a></li>
-				<li><a style="font-size:12px;" href="{{ url('subject') }}"><i class="fa fa-book"></i><span>Source Code Management</span></a></li>
-
-				<li id="menu-comunicacao" ><a href="{{ url('compare') }}"><i class="fa fa-balance-scale"></i><span>Compare</span></a></li>
-
-
-				<li id="menu-academico" ><a href="{{ url('users/report') }}"><i class="fa fa-clipboard"></i></i><span>Report</span></a></li>
-
-
-
-			</ul>
-		</div>
-	</div>
+		        
+		        <li id="menu-academico" ><a href="{{ url('users/report') }}"><i class="fa fa-clipboard"></i></i><span>Report</span></a></li>
+		        
+		       
+		     
+		      </ul>
+		    </div>
+	 </div>
 	<div class="clearfix"> </div>
 </div>
 <!--slide bar menu end here-->

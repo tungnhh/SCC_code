@@ -14,8 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('login',function(){
-    return view('login');
+
+Route::get('dashboard', function(){
+	return view('users.dashboard');
 });
 
 Route::get('file',function(){
@@ -32,6 +33,7 @@ Route::get('exercise',function(){
 Route::get('compare', function(){
 	return view('users.compare');
 });
+
 
 // User login ---------------------------------------------------------------
 
@@ -56,7 +58,8 @@ Route::post('googleDrive', 'googleDriverController@uploadFromDrive');
 
 Route::post('getCompare', 'CompareController@compare');
 
-Route::group(['prefix'=>'users'],function(){
+
+Route::group(['prefix'=>'users','middleware'=>'userlogin'],function(){
     Route::get('report', function(){
         return view('users.report');
     });
@@ -69,12 +72,11 @@ Route::group(['prefix'=>'users'],function(){
 });
 
 
-Route::group(['prefix'=>'ajax'], function(){
+
+Route::group(['prefix'=>'ajax', 'middleware'=>'userlogin'], function(){
 	Route::get('class/{idsubject}', 'CompareController@getClass');
 	Route::get('exercise/{idClass}', 'CompareController@getExercise');
+	Route::get('student/{exerciseID}', 'CompareController@getStudent');
 });
-Route::group(['prefix'=> 'users'],function(){
 
-    });
-});
 
