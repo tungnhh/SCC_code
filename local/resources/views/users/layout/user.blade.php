@@ -4,6 +4,7 @@
 	<title>Source Code checker</title>
 
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="{{url('user')}}">
 	<!--Data Table -->
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css"/>
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>

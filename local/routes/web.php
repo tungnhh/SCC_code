@@ -56,7 +56,7 @@ Route::post('googleDrive', 'googleDriverController@uploadFromDrive');
 
 Route::post('getCompare', 'CompareController@compare');
 
-Route::group(['prefix'=>'users'],function(){
+Route::group(['prefix'=>'users', ],function(){
     Route::get('report', function(){
         return view('users.report');
     });
