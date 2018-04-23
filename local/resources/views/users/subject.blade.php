@@ -81,12 +81,12 @@
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h4 class="modal-title"><span class="far fa-edit"></span> Edit Subject</h4>
                 </div>
-                <form action="editSubject" method="post">
+                <form action="users/subject/edit" method="post">
                 <div class="modal-body">
                     <div class="row" style="margin:10px 0; ">
                         <div class="form-group plain-select" >
                             Select Subject:
-                            <select class="form-control" id="editSubject">
+                            <select class="form-control" name = "subject" id="editSubject">
                                @foreach($subject as $sub)
                                     <option value="{{$sub->id}}">{{$sub ->name}}</option>
                                @endforeach
@@ -98,7 +98,7 @@
                         <div class="col-lg-12 col-lg-12 col-sm-12 col-xs-12">
                             {!! csrf_field() !!}
 
-                                <input class="form-control" name="subject" placeholder="Example: PRF192" type="text" required autofocus />
+                                <input class="form-control" name="subject_edit" placeholder="Example: PRF192" type="text" required autofocus />
 
                         </div>
                     </div>

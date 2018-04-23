@@ -17,14 +17,14 @@ class SCManagementController extends Controller
         $add -> name = $request -> subject;
         $add -> userID = Auth::user()->id;
         $add ->save();
-        $subject = Subject::where('userID',Auth::user()->id)->get();
-        return view('users.subject',['subject'=>$subject]) ->with('notification',"Add Subject successfully");
+        return redirect('users/subject/list') ->with('notification',"Add Subject successfully");
     }
 
-    public function renameSubject(Request $request, $id){
-        $edit = Subject::find($id);
-        $edit -> name = $request -> subject;
+    public function renameSubject(Request $request){
+        $edit = Subject::find($request -> subject);
+        $edit -> name = $request -> subject_edit;
         $edit ->save();
+        return redirect('users/subject/list')->with('notification',"Edit Subject successfully");
     }
 
 }
