@@ -56,7 +56,7 @@ Route::post('googleDrive', 'googleDriverController@uploadFromDrive');
 
 Route::post('getCompare', 'CompareController@compare');
 
-Route::group(['prefix'=>'users', ],function(){
+Route::group(['prefix'=>'users', 'middleware'=>'userlogin'],function(){
     Route::get('report', function(){
         return view('users.report');
     });
@@ -69,7 +69,7 @@ Route::group(['prefix'=>'users', ],function(){
 });
 
 
-Route::group(['prefix'=>'ajax'], function(){
+Route::group(['prefix'=>'ajax', 'middleware'=>'userlogin'], function(){
 	Route::get('class/{idsubject}', 'CompareController@getClass');
 	Route::get('exercise/{idClass}', 'CompareController@getExercise');
 });
