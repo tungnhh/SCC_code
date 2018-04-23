@@ -34,7 +34,7 @@ class LoginController extends Controller
             $password = $request->password;
 
             if( Auth::attempt(['email' => $email, 'password' =>$password])) {
-                return redirect()->intended('subject');
+                return redirect()->intended('users/subject/list');
             } else {
                 $errors = new MessageBag(['errorlogin' => 'Email or Password is incorrect']);
                 return redirect()->back()->withInput()->withErrors($errors);

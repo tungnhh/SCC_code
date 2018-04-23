@@ -4,11 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Subject;
+use Auth;
 class SCManagementController extends Controller
 {
     //
     public function listAllSubject(){
-        $subject = Subject::where('userID',9)->get();
+        $subject = Subject::where('userID',Auth::user()->id)->get();
         return view('users.subject',['subject'=>$subject]);
     }
     public function addSubject(Request $request){
