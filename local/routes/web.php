@@ -33,14 +33,40 @@ Route::get('compare', function(){
 	return view('users.compare');
 });
 
-Route::get('register','HomeController@getRegister');
-Route::post('register','HomeController@postRegister');
-Route::get('login','HomeController@getLogin');
-Route::post('login','HomeController@postLogin');
+// User login ---------------------------------------------------------------
+
+Route::get('register','UserAuth\RegisterController@getRegister');
+Route::post('register','UserAuth\RegisterController@postRegister');
+
+Route::get('login','UserAuth\LoginController@getLogin');
+Route::post('login','UserAuth\LoginController@postLogin');
+
+// User login ---------------------------------------------------------------
+Route::get('logout','UserAuth\LogoutController@logout');
+// User logout---------------------------------------------------------------
+
+
+
+
+
 
 
 Route::post('upload', 'UploadController@uploadFromComputer');
 Route::post('googleDrive', 'googleDriverController@uploadFromDrive');
+
+Route::post('getCompare', 'CompareController@compare');
+
+Route::group(['prefix'=>'users'],function(){
+    Route::get('report', function(){
+        return view('users.report');
+    });
+    Route::group(['prefix' => 'subject'],function (){
+        Route::get('list','SCManagementController@listAllSubject');
+        Route::post('add','SCManagementController@addSubject');
+        Route::get('delete','SCManagementController@deleteSubject');
+        Route::get('search','SCManagementController@searchSubject');
+        Route::post('edit/{id}','SCManagementController@renameSubject');
+});
 
 
 Route::group(['prefix'=>'ajax'], function(){
@@ -48,12 +74,7 @@ Route::group(['prefix'=>'ajax'], function(){
 	Route::get('exercise/{idClass}', 'CompareController@getExercise');
 });
 Route::group(['prefix'=> 'users'],function(){
-    Route::group(['prefix' => 'subject'],function (){
-        Route::get('list','SCManagementController@listAllSubject');
-        Route::post('add','SCManagementController@addSubject');
-        Route::get('delete','SCManagementController@deleteSubject');
-        Route::get('search','SCManagementController@searchSubject');
-        Route::post('edit/{id}','SCManagementController@renameSubject');
+
     });
 });
 
