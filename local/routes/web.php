@@ -29,10 +29,6 @@ Route::get('exercise',function(){
     return view('users.exercise');
 });
 
-Route::get('compare', function(){
-	return view('users.compare');
-});
-
 // User login ---------------------------------------------------------------
 
 Route::get('register','UserAuth\RegisterController@getRegister');
@@ -60,6 +56,9 @@ Route::group(['prefix'=>'users', 'middleware'=>'userlogin'],function(){
     Route::get('report', function(){
         return view('users.report');
     });
+    
+    Route::get('compare', 'CompareController@getSubject');
+
     Route::group(['prefix' => 'subject'],function (){
         Route::get('list','SCManagementController@listAllSubject');
         Route::post('add','SCManagementController@addSubject');

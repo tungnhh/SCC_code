@@ -5,9 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Classes;
 use App\Exercise;
-
+use App\Subject;
+use Auth;
 class CompareController extends Controller
 {
+    public function getSubject()
+    {
+        $subject = Subject::where('userID', Auth::user()->id)->get();
+        return view('users.compare',['subject'=> $subject]);
+    }
+
     public function getClass($idsubject)
     {
     	if($idsubject == -1){
