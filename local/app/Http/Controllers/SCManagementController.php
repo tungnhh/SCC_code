@@ -15,9 +15,9 @@ class SCManagementController extends Controller
     public function addSubject(Request $request){
         $add = new Subject;
         $add -> name = $request -> subject;
-        $add -> userID = 9;
+        $add -> userID = Auth::user()->id;
         $add ->save();
-        $subject = Subject::where('userID',9)->get();
+        $subject = Subject::where('userID',Auth::user()->id)->get();
         return view('users.subject',['subject'=>$subject]) ->with('notification',"Add Subject successfully");
     }
 

@@ -64,7 +64,13 @@ class RegisterController extends Controller
         $user ->role=1; // User
         $user ->save();
 
-        return redirect('subject')->with('thongbao',"Register successfully");
+        if( Auth::attempt(['email' => $request ->email, 'password' =>$request ->password])) {
+                return redirect()->intended('users/subject/list');
+            } else {
+                $errors = new MessageBag(['errorlogin' => 'Email or Password is incorrect']);
+                return redirect()->back()->withInput()->withErrors($errors);
+            }
+        return redirect('users/subject/list')->with('thongbao',"Register successfully");
 
     }
 }
