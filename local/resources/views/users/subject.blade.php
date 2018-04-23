@@ -35,39 +35,38 @@
         <div class="modal-dialog">
 
             <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title"><span class="fas fa-trash-alt"></span> Delete Subject</h4>
-                </div>
-                <div class="modal-body" style="padding:15px 30px;">
-                    <h4>Select Subject....</h4>
-                    <div class="table-responsive" ">
+            <form action="users/subject/delete" method="post">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title"><span class="fas fa-trash-alt"></span> Delete Subject</h4>
+                    </div>
+                    <div class="modal-body" style="padding:15px 30px;">
+                        <h4>Select Subject....</h4>
+                        <div class="table-responsive" ">
                         <table id="mytable" class="table table-bordred table-striped">
                             <thead>
-                            <th><input type="checkbox" id="checkall" /></th>
-                            <th>Subject Name</th>
-                            <th><span class="fa fa-cog"></span></th>
+                                <th>Subject Name</th>
+                                <th><input type="checkbox" id="checkall" /></th>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td><input type="checkbox" class="checkthis" /></td>
-                                <td>Irshad</td>
-                                <td><span data-placement="top" data-toggle="tooltip" title="Delete">
-                                    <button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" >
-                                        <span class="glyphicon glyphicon-trash"></span></button></span>
-                                </td>
-                            </tr>
-
+                                @foreach($subject as $sub)
+                                    <tr>
+                                        <td>{{$sub ->name}}</td>
+                                        <td><input type="checkbox" class="checkthis" /></td>
+                                    </tr>
+                                @endforeach
                             </tbody>
 
                         </table>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-success" data-dismiss="modal">Save</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Delete</button>
                 </div>
-            </div>
+        </div>
+            </form>
+
 
         </div>
     </div>
@@ -81,32 +80,32 @@
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h4 class="modal-title"><span class="far fa-edit"></span> Edit Subject</h4>
                 </div>
-                <form action="editSubject" method="post">
-                <div class="modal-body">
-                    <div class="row" style="margin:10px 0; ">
-                        <div class="form-group plain-select" >
-                            Select Subject:
-                            <select class="form-control" id="editSubject">
-                               @foreach($subject as $sub)
-                                    <option value="{{$sub->id}}">{{$sub ->name}}</option>
-                               @endforeach
-                            </select>
-                        </div>
-
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12 col-lg-12 col-sm-12 col-xs-12">
-                            {!! csrf_field() !!}
-
-                                <input class="form-control" name="subject" placeholder="Example: PRF192" type="text" required autofocus />
+                <form action="users/subject/edit" method="post">
+                    <div class="modal-body">
+                        <div class="row" style="margin:10px 0; ">
+                            <div class="form-group plain-select" >
+                                Select Subject:
+                                <select class="form-control" id="editSubject"  name="subject">
+                                   @foreach($subject as $sub)
+                                        <option value="{{$sub->id}}">{{$sub ->name}}</option>
+                                   @endforeach
+                                </select>
+                            </div>
 
                         </div>
-                    </div>
-                </div>
+                        <div class="row">
+                            <div class="col-lg-12 col-lg-12 col-sm-12 col-xs-12">
+                                {!! csrf_field() !!}
 
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-success">Save</button>
-                </div>
+                                    <input class="form-control" name="subject_edit" placeholder="Example: PRF192" type="text" required autofocus />
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-success">Save</button>
+                    </div>
                 </form>
             </div>
 

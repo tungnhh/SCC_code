@@ -64,7 +64,7 @@ Route::group(['prefix'=>'users', 'middleware'=>'userlogin'],function(){
         Route::post('add','SCManagementController@addSubject');
         Route::get('delete','SCManagementController@deleteSubject');
         Route::get('search','SCManagementController@searchSubject');
-        Route::post('edit/{id}','SCManagementController@renameSubject');
+        Route::post('edit','SCManagementController@renameSubject');
 });
 
 
