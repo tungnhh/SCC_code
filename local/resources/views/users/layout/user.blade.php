@@ -130,7 +130,7 @@
 
 
 				<li id="menu-home" ><a href="{{url('dashboard')}}"><i class="fa fa-tachometer"></i><span>Dashboard</span></a></li>
-				<li><a style="font-size:12px;" href="{{ url('subject') }}"><i class="fa fa-book"></i><span>Source Code Management</span></a></li>
+				<li><a style="font-size:12px;" href="{{ url('users/subject/list') }}"><i class="fa fa-book"></i><span>Source Code Management</span></a></li>
 
 				<li id="menu-comunicacao" ><a href="{{ url('users/compare') }}"><i class="fa fa-balance-scale"></i><span>Compare</span></a></li>
 
