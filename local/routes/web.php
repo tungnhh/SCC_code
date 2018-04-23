@@ -53,11 +53,10 @@ Route::post('googleDrive', 'googleDriverController@uploadFromDrive');
 Route::post('getCompare', 'CompareController@compare');
 
 Route::group(['prefix'=>'users', 'middleware'=>'userlogin'],function(){
-    Route::get('report', function(){
-        return view('users.report');
-    });
-    
+    // Report User ----------------------------------------------------------
     Route::get('compare', 'CompareController@getSubject');
+    Route::get('report', 'ReportController@getSubject');
+    // Report User ----------------------------------------------------------
 
     Route::group(['prefix' => 'subject'],function (){
         Route::get('list','SCManagementController@listAllSubject');
@@ -65,15 +64,13 @@ Route::group(['prefix'=>'users', 'middleware'=>'userlogin'],function(){
         Route::get('delete','SCManagementController@deleteSubject');
         Route::get('search','SCManagementController@searchSubject');
         Route::post('edit/{id}','SCManagementController@renameSubject');
-});
+    });
+});    
+
 
 
 Route::group(['prefix'=>'ajax', 'middleware'=>'userlogin'], function(){
 	Route::get('class/{idsubject}', 'CompareController@getClass');
 	Route::get('exercise/{idClass}', 'CompareController@getExercise');
-});
-Route::group(['prefix'=> 'users'],function(){
-
-    });
 });
 
