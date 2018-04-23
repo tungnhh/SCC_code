@@ -5,6 +5,7 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!--Data Table -->
+<base href="{{ url('user') }}">
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css"/>
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 <link rel="shortcut icon" href="img/sccIcon.png">
@@ -42,11 +43,19 @@
 							<div class="profile_details">
 								<ul>
 									<li class="dropdown profile_details_drop">
+									@if(Auth::user()!==null)
 										<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
 											<div class="profile_img">
-												<span class="prfil-img"><img src="images/p1.png" alt=""> </span>
+												<span class="prfil-img">
+													@if(Auth::user()->image == null)
+														<img style="border-radius: 50%;" width="42px" height="42px" src="img/p1.png" alt=""> 
+													@else
+														<img src="{{Auth::user()->image}}" alt=""> 		
+													@endif
+
+												</span>
 												<div class="user-name">
-													<p>Malorum</p>
+													<p>{{Auth::user()->name}}</p>
 													<span>User</span>
 												</div>
 												<i class="fa fa-angle-down lnr"></i>
@@ -54,10 +63,11 @@
 												<div class="clearfix"></div>
 											</div>
 										</a>
+									@endif	
 										<ul class="dropdown-menu drp-mnu">
 
 											<li> <a href="#"><i class="fa fa-user"></i> Profile</a> </li>
-											<li> <a href="#"><i class="fa fa-sign-out"></i> Logout</a> </li>
+											<li> <a href="logout"><i class="fa fa-sign-out"></i> Logout</a> </li>
 										</ul>
 									</li>
 								</ul>
@@ -119,13 +129,13 @@
 			
 			
 	
-		        <li id="menu-home" ><a href="index.html"><i class="fa fa-tachometer"></i><span>Dashboard</span></a></li>
+		        <li id="menu-home" ><a href="{{url('dashboard')}}"><i class="fa fa-tachometer"></i><span>Dashboard</span></a></li>
 		        <li><a style="font-size:12px;" href="{{ url('subject') }}"><i class="fa fa-book"></i><span>Source Code Management</span></a></li>
 
 		        <li id="menu-comunicacao" ><a href="{{ url('compare') }}"><i class="fa fa-balance-scale"></i><span>Compare</span></a></li>
 
 		        
-		        <li id="menu-academico" ><a href="#"><i class="fa fa-clipboard"></i></i><span>Report</span></a></li>
+		        <li id="menu-academico" ><a href="{{ url('users/report') }}"><i class="fa fa-clipboard"></i></i><span>Report</span></a></li>
 		        
 		       
 		     

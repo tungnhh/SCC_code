@@ -14,8 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('login',function(){
-    return view('login');
+
+Route::get('dashboard', function(){
+	return view('users.dashboard');
 });
 
 Route::get('file',function(){
@@ -35,18 +36,44 @@ Route::get('compare', function(){
 	return view('users.compare');
 });
 
-Route::get('register','HomeController@getRegister');
-Route::post('register','HomeController@postRegister');
-Route::get('login','HomeController@getLogin');
-Route::post('login','HomeController@postLogin');
+
+
+
+// User login ---------------------------------------------------------------
+
+Route::get('register','UserAuth\RegisterController@getRegister');
+Route::post('register','UserAuth\RegisterController@postRegister');
+
+Route::get('login','UserAuth\LoginController@getLogin');
+Route::post('login','UserAuth\LoginController@postLogin');
+
+// User login ---------------------------------------------------------------
+Route::get('logout','UserAuth\LogoutController@logout');
+// User logout---------------------------------------------------------------
+
+
+
+
+
 
 
 Route::post('upload', 'UploadController@uploadFromComputer');
 Route::post('googleDrive', 'googleDriverController@uploadFromDrive');
 
+Route::post('getCompare', 'CompareController@compare');
 
-Route::group(['prefix'=>'ajax'], function(){
+Route::group(['prefix'=>'users', 'middleware'=>'userlogin'],function(){
+	Route::get('report', function(){
+		return view('users.report');
+	});
+});
+
+
+
+
+Route::group(['prefix'=>'ajax', 'middleware'=>'userlogin'], function(){
 	Route::get('class/{idsubject}', 'CompareController@getClass');
 	Route::get('exercise/{idClass}', 'CompareController@getExercise');
+	Route::get('student/{exerciseID}', 'CompareController@getStudent');
 });
 

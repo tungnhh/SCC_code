@@ -29,7 +29,7 @@
 </div>
 
 <div class="row">
-	<input type="submit" class="btn btn-success" value="Get List Students" style="margin-left: 45%;margin-top:  30px;">
+	<input type="submit" id="getStudentList" class="btn btn-success" value="Get List Students" style="margin-left: 45%;margin-top:  30px;">
 </div>
 
 
@@ -49,7 +49,9 @@
 
 	<div class="row">
 		<div class="limiter">
+		<form action="getCompare" method="POST">
 		<div class="container-table100">
+
 			<div class="wrap-table100">
 				<div class="table100 ver2 m-b-110">
 					<div class="table100-head">
@@ -66,18 +68,14 @@
 					</div>	
 					<div class="table100-body js-pscroll">
 						<table>
-							<tbody>
+							<tbody id="listStudent">
 							
 						
 								<tr class="row100 body">
-									<td class="cell100 column1">Thanhnn</td>
-									<td class="cell100 column2">SE03750</td>
+									<td class="cell100 column1"></td>
+									<td class="cell100 column2"><i>Select Exercise and click 'Get list students'</i></td>
 									<td class="cell100 column4">
-										<label class="tasks-list-item">
-        								<input type="checkbox" name="studentID[]" value="" class="tasks-list-cb">
-        								<span class="tasks-list-mark"></span>
 
-      									</label>
 									</td>
 
 								</tr>
@@ -93,9 +91,13 @@
 				</div>	
 
 			</div>	
-				<input class="btn btn-success" type="submit" value="Compare">
-		</div>
+			
+		<input type="hidden" name="_token" value="{{ csrf_token() }}">
+		<input type="submit" class="btn btn-success" style="width:20%;" value="Compare">
+		
 
+		</div>
+	</form>
 	</div>
 
 
@@ -118,7 +120,7 @@
 			});
 
 			$(document).ready(function(){
-				$('#subject').change(function(){
+				$('#subject').click(function(){
 					var idSubject = $(this).val();
 					$.get("ajax/class/"+idSubject, function(data){
 						$("#class").html(data);
@@ -126,15 +128,24 @@
 					$("#exercise").html("<option value=\"-1\">Select Exercise</option>");
 				});
 
-				$('#class').change(function(){
+				$('#class').click(function(){
 					var idClass = $(this).val();
 					$.get("ajax/exercise/"+idClass, function(data){
 						$("#exercise").html(data);
 					});
 				});
 
+				$('#getStudentList').click(function(){
+					var exerciseID = $('#exercise :selected').val();
+					$.get("ajax/student/"+exerciseID, function(data){
+						$('#listStudent').html(data);
+					})
+					
+				});
 
 			});
+
+
 
 
 </script>
